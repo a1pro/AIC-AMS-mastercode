@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             x:Class="AicAms.Views.Details.ExcusePage"
+             Title="{extensions:Translate ExcuseTitle}">
+    <pullToRefresh:PullToRefreshLayout
+        RefreshCommand="{Binding RefreshCommand}"
+        IsRefreshing="{Binding IsRefreshBusy}">
+        <ScrollView
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Padding="10">
+            <Frame BackgroundColor="#ededed" 
+                   OutlineColor="White"
+                   VerticalOptions="Start"
+                   Padding="10">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label FontSize="Small" 
+                               Grid.Row="0" Grid.Column="0"
+                               Text="{extensions:Translate DateLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <DatePicker MaximumDate="{Binding MaxDate}"
+                                    Grid.Row="1" Grid.Column="0"
+                                    MinimumDate="{Binding MinTime}"
+                                    Date="{Binding SelectedDate}"/>
+                        <Label FontSize="Small" 
+                               Grid.Row="0" Grid.Column="1"
+                               Text="{extensions:Translate TimeFromLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <TimePicker Time="{Binding TimeFrom}"
+                                    Grid.Row="1" Grid.Column="1"/>
+                        <Label FontSize="Small" 
+                               Grid.Row="0" Grid.Column="2"
+                               Text="{extensions:Translate TimeToLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <TimePicker Time="{Binding TimeTo}"
+                                    Grid.Row="1" Grid.Column="2"/>
+                    </Grid>
+                    <Label FontSize="Small" 
+                           Text="{extensions:Translate ExcuseTypeLabel}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <extensions:BindablePicker Title="{Binding ExcuseTypesPikerTitle}"
+                                               ItemsSource="{Binding RequestTypes}"
+                                               SelectedItem="{Binding SelectedRequestType}"
+                                               DisplayMemberPath="Name"/>
+                    <Label FontSize="Small" 
+                           Text="{extensions:Translate ReasonLabel}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Editor HeightRequest="100" Text="{Binding Reason}"/>
+                    <Grid HeightRequest="50" HorizontalOptions="Center">
+                        <Button Text="{extensions:Translate SendButton}"
+                                HorizontalOptions="Center"
+                                HeightRequest="50"
+                                Command="{Binding SendCommand}" IsVisible="{Binding IsButtonVisible}"/>
+                        <ActivityIndicator IsRunning="True"
+                                           IsVisible="{Binding IsIndicatorVisible}"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </pullToRefresh:PullToRefreshLayout>
+</ContentPage>

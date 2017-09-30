@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             xmlns:xfShapeView="clr-namespace:XFShapeView;assembly=XFShapeView"
+             x:Class="AicAms.Views.Details.DaySummaryPage"
+             Title="{extensions:Translate DaySummaryTitle}">
+    <pullToRefresh:PullToRefreshLayout
+        RefreshCommand="{Binding RefreshCommand}"
+        IsRefreshing="{Binding IsRefreshBusy}">
+        <ScrollView
+            HorizontalOptions="Fill"
+            VerticalOptions="Fill">
+            <StackLayout
+                HorizontalOptions="Fill"
+                VerticalOptions="Fill"
+                Padding="10"
+                Spacing="20">
+                <Frame BackgroundColor="#ededed" 
+                       OutlineColor="White"
+                       VerticalOptions="Start"
+                       Padding="10">
+                    <StackLayout>
+                        <Label FontSize="Small" 
+                            IsVisible="{Binding IsManager}"
+                            Text="{extensions:Translate DepartmentLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <extensions:BindablePicker
+                            IsVisible="{Binding IsManager}"
+                            Title="{Binding DepartmentsPikerTitle}"
+                            VerticalOptions="Center"
+                            ItemsSource="{Binding Departments}"
+                            SelectedItem="{Binding SelectedDepartment}"
+                            DisplayMemberPath="Name"/>
+                        <Label FontSize="Small"
+                            IsVisible="{Binding IsManager}"
+                            Text="{extensions:Translate EmployeeLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <extensions:BindablePicker
+                            IsVisible="{Binding IsManager}"
+                            Title="{Binding EmployeePikerTitle}"
+                            VerticalOptions="Center"
+                            ItemsSource="{Binding Employees}"
+                            SelectedItem="{Binding SelectedEmployee}"
+                            DisplayMemberPath="Name" />
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label FontSize="Small"
+                                     Grid.Row="0" Grid.Column="0"
+                                     Text="{extensions:Translate ShiftText}"
+                                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+                            <Label FontSize="Small"
+                                     Grid.Row="0" Grid.Column="1"
+                                     Text="{extensions:Translate DateLabel}"
+                                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+                            <extensions:BindablePicker
+                                Grid.Row="1" Grid.Column="0"
+                                Title="{extensions:Translate ShiftTitle}"
+                                SelectedItem="{Binding SelectedShift}"
+                                ItemsSource="{Binding Shifts}"/>
+                            <DatePicker MaximumDate="{Binding MaxDate}"
+                                        Grid.Row="1" Grid.Column="1"
+                                        MinimumDate="{Binding MinTime}"
+                                        Date="{Binding Date}"/>
+                        </Grid>
+
+                        <Grid HeightRequest="50" HorizontalOptions="Center">
+                            <Button
+                                Text="{extensions:Translate ShowButton}"
+                                HorizontalOptions="Center"
+                                HeightRequest="50"
+                                Command="{Binding ShowCommand}" IsVisible="{Binding IsButtonVisible}"/>
+                            <ActivityIndicator
+                                IsRunning="True"
+                                IsVisible="{Binding IsIndicatorVisible}"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Grid RowSpacing="10" ColumnSpacing="15" Padding="10" IsVisible="{Binding IsTextChartsVisible}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate ShiftText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="1"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate StatusText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="2"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate ShiftDurationText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="3"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate WorkDurationText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="4"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate PunchInText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="5"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate PunchOutText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="6"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate BeginEarlyText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="7"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate BeginLateText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="8"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate OutEarlyText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding StartSpan}" Grid.Row="9"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate OutLateText}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.ShiftId}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           VerticalOptions="Center"
+                           Text="{Binding Status}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="2"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.ShiftDurationComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="3"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.WorkDurationComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="4"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.PunchInComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="5"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.PunchOutComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="6"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.BeginEarlyComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="7"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.BeginLateComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="8"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.OutEarlyComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="9"
+                           VerticalOptions="Center"
+                           Text="{Binding Summary.OutLateComment}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <Label Text="{extensions:Translate NoDataYet}"
+                    IsVisible="{Binding IsNoDataMsgVisible}"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+            </StackLayout>
+        </ScrollView>
+    </pullToRefresh:PullToRefreshLayout>
+</ContentPage>

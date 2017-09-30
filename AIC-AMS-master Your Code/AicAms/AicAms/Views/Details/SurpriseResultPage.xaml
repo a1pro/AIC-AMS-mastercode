@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             x:Class="AicAms.Views.Details.SurpriseResultPage"
+             Title="{extensions:Translate SurpriseResultTitle}">
+    <ContentPage.Content>
+        <Grid>
+            <ListView IsPullToRefreshEnabled="True"
+                      ItemsSource="{Binding DetailSurprises}"
+                      IsRefreshing="{Binding IsRefreshBusy}"
+                      RefreshCommand="{Binding RefreshCommand}"
+                      SeparatorVisibility="None"
+                      ItemSelected="ListView_OnItemSelected">
+                <ListView.Header>
+                    <StackLayout
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    Padding="10"
+                    Spacing="20">
+                        <Frame BackgroundColor="#ededed" 
+                               OutlineColor="White"
+                               VerticalOptions="Start"
+                               Padding="10">
+                            <StackLayout>
+                                <Label FontSize="Small" 
+                                        Text="{extensions:Translate MasterSurpriseLabel}"
+                                       HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                                <extensions:BindablePicker
+                                        Title="{Binding MasterSurprisePikerTitle}"
+                                        VerticalOptions="Center"
+                                        ItemsSource="{Binding MasterSurprises}"
+                                        SelectedItem="{Binding SelectedSurprise}"
+                                        DisplayMemberPath="Title"/>
+                                <Grid HeightRequest="50" HorizontalOptions="Center">
+                                    <Button
+                                        Text="{extensions:Translate ShowButton}"
+                                        HorizontalOptions="Center"
+                                        HeightRequest="50"
+                                        Command="{Binding ShowCommand}"
+                                        IsVisible="{Binding IsButtonVisible}"/>
+                                    <ActivityIndicator
+                                        IsRunning="True"
+                                        IsVisible="{Binding IsIndicatorVisible}"/>
+                                </Grid>
+                            </StackLayout>
+                        </Frame>
+                        <Label Text="{extensions:Translate NoDataYet}"
+                                IsVisible="{Binding IsNoDataMsgVisible}"
+                                FontAttributes="Bold"
+                                FontSize="Large"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center"/>
+                        <Grid Margin="-10,0,-10,0" ColumnSpacing="5" IsVisible="{Binding IsGridTitleVisible}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0"
+                               FontSize="Small"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{extensions:Translate EmpIdGridTitle}"></Label>
+                            <Label Grid.Column="1"
+                               FontSize="Small"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{extensions:Translate NameGridTitle}"></Label>
+                            <Label Grid.Column="2"
+                               FontSize="Small"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{extensions:Translate CheckedGridTitle}"></Label>
+                            <Label Grid.Column="3"
+                               FontSize="Small"
+                               FontAttributes="Bold"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{extensions:Translate InLocationGridTitle}"></Label>
+                        </Grid>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.Footer>
+                    <StackLayout Orientation="Horizontal"
+                                 IsVisible="{Binding IsFooterVisible}"
+                                 HorizontalOptions="Center"
+                                 Padding="15">
+                        <Button Text="{extensions:Translate ResendPushButton}"
+                                HorizontalOptions="Center"
+                                BackgroundColor="#388E3C"
+                                BorderColor="Black" TextColor="White"
+                                HeightRequest="50" WidthRequest="200"
+                                Command="{Binding ResendCommand}"/>
+                    </StackLayout>
+                </ListView.Footer>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid ColumnSpacing="5" VerticalOptions="Fill" BackgroundColor="{Binding BackgroundColor}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1.5*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0"
+                                   FontSize="Small"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Text="{Binding EmpId}"></Label>
+                                <Label Grid.Column="1"
+                                   FontSize="Small"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   Text="{Binding EmpName}"></Label>
+                                <Grid Column="2">
+                                    <Image VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           Source="{Binding IsCheckedImg}"
+                                           HeightRequest="20"/>
+                                </Grid>
+                                <Grid Column="3">
+                                    <Image VerticalOptions="Center"
+                                           HorizontalOptions="Center"
+                                           Source="{Binding InLocationImg}"
+                                           HeightRequest="20"/>
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid IsVisible="{Binding IsBlockingDisplay}">
+                <BoxView Opacity="0.85" 
+                         BackgroundColor="White"
+                         HorizontalOptions="Fill"
+                         VerticalOptions="Fill"/>
+                <ActivityIndicator IsRunning="True"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"/>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             x:Class="AicAms.Views.PushActions.SurpriseAccomplishPage"
+             Title="{extensions:Translate SurpriseAccomplishTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{extensions:Translate CancelToolbar}" Command="{Binding CancelCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Source="Fingerprint.png" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SendCommand}"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Grid.Row="1" Padding="20" Spacing="10" Orientation="Horizontal">
+                    <Image Source="Marker.png" HeightRequest="30"></Image>
+                    <Label Text="{extensions:Translate AttendanceLocationLabel}" VerticalOptions="Center"></Label>
+                </StackLayout>
+            </Grid>
+            <Grid IsVisible="{Binding IsBlockingDisplay}">
+                <BoxView Opacity="0.95" 
+                         BackgroundColor="White"
+                         HorizontalOptions="Fill"
+                         VerticalOptions="Fill"/>
+                <Grid VerticalOptions="Center"
+                            HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <ActivityIndicator IsRunning="True"
+                                       Grid.Column="{Binding StartSpan}"
+                                HorizontalOptions="Center"/>
+                    <Label Text="{Binding BlockingText}" Grid.Column="{Binding EndSpan}"
+                        HorizontalOptions="Center"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

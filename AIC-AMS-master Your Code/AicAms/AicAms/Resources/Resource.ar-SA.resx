@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AcceptedDdl" xml:space="preserve">
+    <value>تمت الموافقة</value>
+  </data>
+  <data name="AllDdl" xml:space="preserve">
+    <value>الكل</value>
+  </data>
+  <data name="AllEmpVar" xml:space="preserve">
+    <value>كل الموظفين</value>
+  </data>
+  <data name="ApproveButton" xml:space="preserve">
+    <value>موافقة</value>
+  </data>
+  <data name="AttendanceLocationLabel" xml:space="preserve">
+    <value>يتم التحقق من موقعك الحالي</value>
+  </data>
+  <data name="AuthFailMsg" xml:space="preserve">
+    <value>اسم المستخدم او كلمة السر غير صحيحة</value>
+    <comment>Failure connection message</comment>
+  </data>
+  <data name="BackButton" xml:space="preserve">
+    <value>عودة</value>
+  </data>
+  <data name="BeginEarlyText" xml:space="preserve">
+    <value>حضور مبكر:</value>
+  </data>
+  <data name="BeginLateText" xml:space="preserve">
+    <value>حضور متأخر</value>
+  </data>
+  <data name="CancelToolbar" xml:space="preserve">
+    <value>إلغاء</value>
+  </data>
+  <data name="CharH" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="CharM" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="CheckedGridTitle" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="CheckingLocationLabel" xml:space="preserve">
+    <value>التحقق من الموقع</value>
+  </data>
+  <data name="CheckInternetMsg" xml:space="preserve">
+    <value>الرجاء التحقق من الإتصال بالإنترنت</value>
+    <comment>Failure connection message</comment>
+  </data>
+  <data name="DashboardTitle" xml:space="preserve">
+    <value>لوحة البيانات</value>
+  </data>
+  <data name="DateFromLabel" xml:space="preserve">
+    <value>من تاريخ:</value>
+  </data>
+  <data name="DateGridTitle" xml:space="preserve">
+    <value>التاريخ</value>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>التاريخ:</value>
+  </data>
+  <data name="DateToLabel" xml:space="preserve">
+    <value>من تاريخ:</value>
+  </data>
+  <data name="DayGridTitle" xml:space="preserve">
+    <value>اليوم</value>
+  </data>
+  <data name="DaysText" xml:space="preserve">
+    <value>الأيام</value>
+  </data>
+  <data name="DaySummaryText" xml:space="preserve">
+    <value>يومي</value>
+    <comment>Day summary</comment>
+  </data>
+  <data name="DaySummaryTitle" xml:space="preserve">
+    <value>ملخص اليوم</value>
+  </data>
+  <data name="DayText" xml:space="preserve">
+    <value>اليوم:</value>
+  </data>
+  <data name="DayTitle" xml:space="preserve">
+    <value>إختر يوم</value>
+  </data>
+  <data name="DecisionTitle" xml:space="preserve">
+    <value>إعتماد الطلبات</value>
+  </data>
+  <data name="DepartmentLabel" xml:space="preserve">
+    <value>الإدارة:</value>
+  </data>
+  <data name="DepartmentTitle" xml:space="preserve">
+    <value>إختر إدارة</value>
+    <comment>Title for department picker</comment>
+  </data>
+  <data name="DownloadingText" xml:space="preserve">
+    <value>جاري التحميل...</value>
+    <comment>Downloading text</comment>
+  </data>
+  <data name="DurGridTitle" xml:space="preserve">
+    <value>مدة</value>
+  </data>
+  <data name="EmpIdGridTitle" xml:space="preserve">
+    <value>رقم الموظف</value>
+  </data>
+  <data name="EmpIdText" xml:space="preserve">
+    <value>رقم الموظف:</value>
+  </data>
+  <data name="EmployeeLabel" xml:space="preserve">
+    <value>الموظف:</value>
+  </data>
+  <data name="EmployeeTitle" xml:space="preserve">
+    <value>إختر موظف</value>
+    <comment>Title for employee picker</comment>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>خطأ</value>
+    <comment>Error text</comment>
+  </data>
+  <data name="ExcuseDdl" xml:space="preserve">
+    <value>إستئذان</value>
+  </data>
+  <data name="ExcuseStr" xml:space="preserve">
+    <value>إستئذان</value>
+  </data>
+  <data name="ExcuseTitle" xml:space="preserve">
+    <value>طلب إستئذان</value>
+  </data>
+  <data name="ExcuseTypeLabel" xml:space="preserve">
+    <value>نوع الإستئذان:</value>
+  </data>
+  <data name="ExcuseTypeTitle" xml:space="preserve">
+    <value>إختر نوع الإستئذان</value>
+  </data>
+  <data name="ExcuseValidationError" xml:space="preserve">
+    <value>الرجاء ان يكون من تاريخ أقل من الى تاريخ</value>
+  </data>
+  <data name="FailureSentRequst" xml:space="preserve">
+    <value>لم يتم تنفيذ طلبك,الرجاء مراجعة مدير النظام</value>
+  </data>
+  <data name="FingerprintComponentMsg" xml:space="preserve">
+    <value>ضع بصمتك هنا</value>
+    <comment>Message in fingerprint component</comment>
+  </data>
+  <data name="HoursText" xml:space="preserve">
+    <value>الساعات</value>
+  </data>
+  <data name="HrsText" xml:space="preserve">
+    <value>ساعات</value>
+  </data>
+  <data name="IdGridTitle" xml:space="preserve">
+    <value>رقم</value>
+  </data>
+  <data name="InfoGridTitle" xml:space="preserve">
+    <value>معلومات</value>
+  </data>
+  <data name="InGridTitle" xml:space="preserve">
+    <value>دخول</value>
+  </data>
+  <data name="InLocationGridTitle" xml:space="preserve">
+    <value>في الموقع</value>
+  </data>
+  <data name="LoginButtonTitle" xml:space="preserve">
+    <value>دخول</value>
+    <comment>Login button title</comment>
+  </data>
+  <data name="LoginPlaceholder" xml:space="preserve">
+    <value>إسم المستخدم</value>
+    <comment>Login entry placeholder</comment>
+  </data>
+  <data name="LogoutButtonTitle" xml:space="preserve">
+    <value>خروج</value>
+    <comment>Logout button title</comment>
+  </data>
+  <data name="LogoutTitle" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="MasterSurpriseLabel" xml:space="preserve">
+    <value>البحص بوقت الطلب:</value>
+  </data>
+  <data name="MasterSurpriseTitle" xml:space="preserve">
+    <value>إختر التحضير المفاجئ</value>
+  </data>
+  <data name="MonthSummaryText" xml:space="preserve">
+    <value>شهري</value>
+    <comment>Month summary</comment>
+  </data>
+  <data name="MonthSummaryTitle" xml:space="preserve">
+    <value>الملخص الشهري</value>
+  </data>
+  <data name="MonthText" xml:space="preserve">
+    <value>الشهر:</value>
+  </data>
+  <data name="MonthTitle" xml:space="preserve">
+    <value>إختر الشهر</value>
+  </data>
+  <data name="MyRequestsValidationError" xml:space="preserve">
+    <value>الرجاء ان يكون من تاريخ أقل او يساوي من الى تاريخ</value>
+  </data>
+  <data name="NameGridTitle" xml:space="preserve">
+    <value>الإسم</value>
+  </data>
+  <data name="NoAccessMsg" xml:space="preserve">
+    <value>لا يوجد لك صلاحية لتنفيذ هذا الطلب</value>
+    <comment>Failure action message</comment>
+  </data>
+  <data name="NoDataYet" xml:space="preserve">
+    <value>لا يوجد بيانات</value>
+  </data>
+  <data name="NotEnouthFields" xml:space="preserve">
+    <value>الرجاء تعبئة جميع الحقول</value>
+  </data>
+  <data name="NotSelectedError" xml:space="preserve">
+    <value>الرجاء الإختيار</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>موافق</value>
+    <comment>OK text</comment>
+  </data>
+  <data name="OutEarlyText" xml:space="preserve">
+    <value>خروج مبكر:</value>
+  </data>
+  <data name="OutGridTitle" xml:space="preserve">
+    <value>خروج</value>
+  </data>
+  <data name="OutLateText" xml:space="preserve">
+    <value>خروج متأخر:</value>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>كلمة السر:</value>
+    <comment>Password entry placeholder</comment>
+  </data>
+  <data name="PunchInText" xml:space="preserve">
+    <value>بصمة الدخول:</value>
+  </data>
+  <data name="PunchOutText" xml:space="preserve">
+    <value>بصمة الخروج:</value>
+  </data>
+  <data name="ReasonLabel" xml:space="preserve">
+    <value>السبب:</value>
+  </data>
+  <data name="RejectButton" xml:space="preserve">
+    <value>رفض</value>
+  </data>
+  <data name="RejectedDdl" xml:space="preserve">
+    <value>مرفوض</value>
+  </data>
+  <data name="ReqIdText" xml:space="preserve">
+    <value>رقم:</value>
+  </data>
+  <data name="RequestDecisionValidationError" xml:space="preserve">
+    <value>الرجاء ان يكون من تاريخ أقل او يساوي من الى تاريخ</value>
+  </data>
+  <data name="RequestSurpriseTitle" xml:space="preserve">
+    <value>التحضير المفاجئ</value>
+  </data>
+  <data name="RequestTitle" xml:space="preserve">
+    <value>طلباتي</value>
+  </data>
+  <data name="RequestTypeLable" xml:space="preserve">
+    <value>نوع الطلب:</value>
+  </data>
+  <data name="RequestTypeTitle" xml:space="preserve">
+    <value>إختر نوع الطلب</value>
+  </data>
+  <data name="ResendPushButton" xml:space="preserve">
+    <value>إرسال مرة أخرى</value>
+  </data>
+  <data name="RetGridTitle" xml:space="preserve">
+    <value>طلب</value>
+  </data>
+  <data name="RetIdText" xml:space="preserve">
+    <value>نوع الطلب:</value>
+  </data>
+  <data name="SendButton" xml:space="preserve">
+    <value>إرسال</value>
+  </data>
+  <data name="SendingRequestLabel" xml:space="preserve">
+    <value>جاري إرسال الطلب</value>
+  </data>
+  <data name="SendSurpriseButton" xml:space="preserve">
+    <value>إرسال التحضير المفاجئ</value>
+  </data>
+  <data name="ShiftDurationText" xml:space="preserve">
+    <value>مدة الفترة:</value>
+  </data>
+  <data name="ShiftText" xml:space="preserve">
+    <value>الفترة:</value>
+  </data>
+  <data name="ShiftTitle" xml:space="preserve">
+    <value>إختر الفترة</value>
+  </data>
+  <data name="ShowButton" xml:space="preserve">
+    <value>عرض</value>
+  </data>
+  <data name="StatusA" xml:space="preserve">
+    <value>غائب</value>
+  </data>
+  <data name="StatusCM" xml:space="preserve">
+    <value>منتدب</value>
+  </data>
+  <data name="StatusDashboard" xml:space="preserve">
+    <value>الحالة:</value>
+  </data>
+  <data name="StatusGridTitle" xml:space="preserve">
+    <value>الحالة</value>
+  </data>
+  <data name="StatusH" xml:space="preserve">
+    <value>إجازة</value>
+  </data>
+  <data name="StatusIN" xml:space="preserve">
+    <value>دخول فقط</value>
+  </data>
+  <data name="StatusJB" xml:space="preserve">
+    <value>مهمة عمل</value>
+  </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>الحالة:</value>
+  </data>
+  <data name="StatusOI" xml:space="preserve">
+    <value>دخول/خروج</value>
+  </data>
+  <data name="StatusOU" xml:space="preserve">
+    <value>خروج فقط</value>
+  </data>
+  <data name="StatusP" xml:space="preserve">
+    <value>في العمل</value>
+  </data>
+  <data name="StatusPE" xml:space="preserve">
+    <value>إجازة دفوعة</value>
+  </data>
+  <data name="StatusText" xml:space="preserve">
+    <value>الحالة:</value>
+  </data>
+  <data name="StatusTitle" xml:space="preserve">
+    <value>إختر الحالة</value>
+  </data>
+  <data name="StatusUE" xml:space="preserve">
+    <value>إجازة غير مدفوعة</value>
+  </data>
+  <data name="StatusUnknown" xml:space="preserve">
+    <value>غير معرف</value>
+  </data>
+  <data name="StatusWE" xml:space="preserve">
+    <value>نهاية اسبوع</value>
+  </data>
+  <data name="SuccessSentRequest" xml:space="preserve">
+    <value>لقد تم إرسال طلبك بنجاح</value>
+  </data>
+  <data name="SuccessText" xml:space="preserve">
+    <value>نجاح</value>
+  </data>
+  <data name="SummaryTypeLabel" xml:space="preserve">
+    <value>الملخص:</value>
+  </data>
+  <data name="SummaryTypeTitle" xml:space="preserve">
+    <value>إختر نوع الملخص:</value>
+    <comment>Title for summary timepicker</comment>
+  </data>
+  <data name="SurpriseAccomplishTitle" xml:space="preserve">
+    <value>الحضور المفاجئ</value>
+  </data>
+  <data name="SurpriseResultTitle" xml:space="preserve">
+    <value>نتائج الحضور المفاجئ</value>
+  </data>
+  <data name="TimeFromLabel" xml:space="preserve">
+    <value>من وقت:</value>
+  </data>
+  <data name="TimeToLabel" xml:space="preserve">
+    <value>الى وقت:</value>
+  </data>
+  <data name="TotalAbsentDays" xml:space="preserve">
+    <value>عدد أيام الغياب:</value>
+  </data>
+  <data name="TotalGapDurationWithoutExcuse" xml:space="preserve">
+    <value>عدد الثغرات بدون عذر</value>
+  </data>
+  <data name="TotalLateHours" xml:space="preserve">
+    <value>عدد ساعات التأخير:</value>
+  </data>
+  <data name="TotalShiftDuration" xml:space="preserve">
+    <value>مجموع مدة الفترة</value>
+  </data>
+  <data name="TotalWorkDuration" xml:space="preserve">
+    <value>مجموع مدة العمل</value>
+  </data>
+  <data name="TotalWorkingHours" xml:space="preserve">
+    <value>مجموع ساعات العمل:</value>
+  </data>
+  <data name="TypeGridTitle" xml:space="preserve">
+    <value>النوع</value>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>النوع:</value>
+  </data>
+  <data name="UnableLocationMessage" xml:space="preserve">
+    <value>غير قادر على تحديد الموقع</value>
+  </data>
+  <data name="UnderProcessDdl" xml:space="preserve">
+    <value>تحت الإجراء</value>
+  </data>
+  <data name="UserGridTitle" xml:space="preserve">
+    <value>المستخدم</value>
+  </data>
+  <data name="UserText" xml:space="preserve">
+    <value>إسم المستخدم:</value>
+  </data>
+  <data name="VacationStr" xml:space="preserve">
+    <value>إجازة</value>
+  </data>
+  <data name="VacationTitle" xml:space="preserve">
+    <value>طلب إجازة</value>
+  </data>
+  <data name="VacationTypeLabel" xml:space="preserve">
+    <value>نوع الإجازة:</value>
+  </data>
+  <data name="VacationTypeTitle" xml:space="preserve">
+    <value>إختر نوع الإجازة</value>
+  </data>
+  <data name="VacationValidationError" xml:space="preserve">
+    <value>الرجاء ان يكون من تاريخ أقل او يساوي من الى تاريخ</value>
+  </data>
+  <data name="VacDdl" xml:space="preserve">
+    <value>الإجازات</value>
+  </data>
+  <data name="WelcomeText" xml:space="preserve">
+    <value>مرحبا,</value>
+  </data>
+  <data name="WorkDurationText" xml:space="preserve">
+    <value>مدة العمل:</value>
+  </data>
+  <data name="YearText" xml:space="preserve">
+    <value>السنة:</value>
+  </data>
+  <data name="YearTitle" xml:space="preserve">
+    <value>إختر السنة</value>
+  </data>
+  <data name="AlertActionTitle" xml:space="preserve">
+    <value>إنتباه</value>
+  </data>
+  <data name="ChangeLang" xml:space="preserve">
+    <value>تغيير اللغة</value>
+  </data>
+  <data name="ChangeLangMsg" xml:space="preserve">
+    <value>سيتم تغيير اللغة بعد إعادة تشغيل النظام,هل أنت موافق؟</value>
+  </data>
+  <data name="RestartApp" xml:space="preserve">
+    <value>الرجاء إعادة تشغيل النظام</value>
+  </data>
+</root>

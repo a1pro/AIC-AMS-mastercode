@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             x:Class="AicAms.Views.Details.MyRequestsPage"
+             Title="{extensions:Translate RequestTitle}">
+    <ListView IsPullToRefreshEnabled="True"
+              ItemsSource="{Binding Requests}"
+              IsRefreshing="{Binding IsRefreshBusy}"
+              RefreshCommand="{Binding RefreshCommand}"
+              SeparatorVisibility="None"
+              ItemSelected="ListView_OnItemSelected">
+        <ListView.Header>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                Padding="10"
+                Spacing="20">
+                <Frame BackgroundColor="#ededed" 
+                       OutlineColor="White"
+                       VerticalOptions="Start"
+                       Padding="10">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                                <RowDefinition Height="Auto"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label FontSize="Small"
+                                     Grid.Row="0" Grid.Column="0"
+                                     Text="{extensions:Translate RequestTypeLable}"
+                                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+                            <Label FontSize="Small"
+                                     Grid.Row="0" Grid.Column="1"
+                                     Text="{extensions:Translate StatusLabel}"
+                                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+                            <extensions:BindablePicker
+                                Grid.Row="1" Grid.Column="0"
+                                Title="{extensions:Translate RequestTypeTitle}"
+                                SelectedItem="{Binding SelectedType}"
+                                ItemsSource="{Binding RequestTypes}"/>
+                            <extensions:BindablePicker
+                                Grid.Row="1" Grid.Column="1"
+                                Title="{extensions:Translate StatusTitle}"
+                                SelectedItem="{Binding SelectedStatus}"
+                                ItemsSource="{Binding Statuses}"/>
+
+                            <Label FontSize="Small" 
+                               Grid.Row="2" Grid.Column="0"
+                               Text="{extensions:Translate DateFromLabel}"
+                                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                            <DatePicker MaximumDate="{Binding MaxDate}"
+                                    Grid.Row="3" Grid.Column="0"
+                                    MinimumDate="{Binding MinTime}"
+                                    Date="{Binding DateFrom}"/>
+                            <Label FontSize="Small" 
+                               Grid.Row="2" Grid.Column="1"
+                               Text="{extensions:Translate DateToLabel}"
+                                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                            <DatePicker MaximumDate="{Binding MaxDate}"
+                                    Grid.Row="3" Grid.Column="1"
+                                    MinimumDate="{Binding MinTime}"
+                                    Date="{Binding DateTo}"/>
+                        </Grid>
+
+                        <Grid HeightRequest="50" HorizontalOptions="Center">
+                            <Button
+                                Text="{extensions:Translate ShowButton}"
+                                HorizontalOptions="Center"
+                                HeightRequest="50"
+                                Command="{Binding ShowCommand}" IsVisible="{Binding IsButtonVisible}"/>
+                            <ActivityIndicator
+                                IsRunning="True"
+                                IsVisible="{Binding IsIndicatorVisible}"/>
+                        </Grid>
+                    </StackLayout>
+                </Frame>
+                <Label Text="{extensions:Translate NoDataYet}"
+                    IsVisible="{Binding IsNoDataMsgVisible}"
+                    FontAttributes="Bold"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"/>
+                <Grid Margin="-10,0,-10,0" ColumnSpacing="5" IsVisible="{Binding IsGridTitleVisible}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0"
+                           FontSize="Small"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Text="{extensions:Translate DateGridTitle}"></Label>
+                    <Label Grid.Column="1"
+                           FontSize="Small"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Text="{extensions:Translate RetGridTitle}"></Label>
+                    <Label Grid.Column="2"
+                           FontSize="Small"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Text="{extensions:Translate TypeGridTitle}"></Label>
+                    <Label Grid.Column="3"
+                           FontSize="Small"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Text="{extensions:Translate StatusGridTitle}"></Label>
+                </Grid>
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid ColumnSpacing="5" VerticalOptions="Fill" BackgroundColor="{Binding BackgroundColor}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="2*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0"
+                               FontSize="Small"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{Binding DateComment}"></Label>
+                        <Label Grid.Column="1"
+                               FontSize="Small"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{Binding RetId}"></Label>
+                        <Label Grid.Column="2"
+                               FontSize="Small"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{Binding RequestType.Name}"></Label>
+                        <Label Grid.Column="3"
+                               FontSize="Small"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center"
+                               Text="{Binding StatusComment}"></Label>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

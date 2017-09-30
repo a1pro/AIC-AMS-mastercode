@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             x:Class="AicAms.Views.Popups.RequestInfoPage">
+    <Frame HorizontalOptions="Fill" Margin="30" Padding="10" VerticalOptions="Center" BackgroundColor="#dddddd">
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate ReqIdText}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate UserText}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="2"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate EmpIdText}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="3"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate RetIdText}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="4"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate TypeText}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="5"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate ReasonLabel}"/>
+
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.Id}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.EmpLogin}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="2"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.EmpId}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="3"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.RetStr}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="4"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.RequestType.Name}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="5"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.Reason}"/>
+                </Grid>
+                <Grid IsVisible="{Binding IsExc}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate DateLabel}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate TimeFromLabel}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="2"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate TimeToLabel}"/>
+
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.DateFromComment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.TimeFromComment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="2"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.TimeToComment}"/>
+                </Grid>
+                <Grid IsVisible="{Binding IsVac}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="Auto"></RowDefinition>
+
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate DateFromLabel}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           FontAttributes="Bold"
+                           FontSize="Medium"
+                           VerticalOptions="Center"
+                           Text="{extensions:Translate DateToLabel}"/>
+
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="0"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.DateFromComment}"/>
+                    <Label Grid.Column="{Binding EndSpan}" Grid.Row="1"
+                           VerticalOptions="Center"
+                           Text="{Binding Request.DateToComment}"/>
+                </Grid>
+                <Button Text="{extensions:Translate Back}" Command="{Binding BackCommand}" HorizontalOptions="Center"></Button>
+            </StackLayout>
+        </ScrollView>
+    </Frame>
+</pages:PopupPage>

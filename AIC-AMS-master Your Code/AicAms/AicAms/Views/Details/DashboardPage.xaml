@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ext="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             xmlns:xfShapeView="clr-namespace:XFShapeView;assembly=XFShapeView"
+             x:Class="AicAms.Views.Details.DashboardPage"
+             Title="{ext:Translate DashboardTitle}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="{ext:Translate ChangeLang}"
+                     Order="Primary"
+                     Icon="Lang.png"
+                     Command="{Binding ChangeLangCommand}"/>
+    </ContentPage.ToolbarItems>
+    <pullToRefresh:PullToRefreshLayout
+      RefreshCommand="{Binding RefreshCommand}"
+      IsRefreshing="{Binding IsRefreshBusy}">
+    <ScrollView
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+      <StackLayout
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand"
+          Padding="10"
+          Spacing="20">
+        <Frame 
+            BackgroundColor="#ededed" 
+            OutlineColor="White"
+            VerticalOptions="Start"
+            Padding="10">
+          <StackLayout>
+            <Label FontSize="Small" 
+                   IsVisible="{Binding IsManager}"
+                   Text="{ext:Translate DepartmentLabel}"
+                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+            <ext:BindablePicker
+                IsVisible="{Binding IsManager}"
+                Title="{Binding DepartmentsPikerTitle}"
+                VerticalOptions="Center"
+                ItemsSource="{Binding Departments}"
+                SelectedItem="{Binding SelectedDepartment}"
+                DisplayMemberPath="Name"/>
+            <Label FontSize="Small"
+                   IsVisible="{Binding IsManager}"
+                   Text="{ext:Translate EmployeeLabel}"
+                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+            <ext:BindablePicker
+                IsVisible="{Binding IsManager}"
+                Title="{Binding EmployeePikerTitle}"
+                VerticalOptions="Center"
+                ItemsSource="{Binding Employees}"
+                SelectedItem="{Binding SelectedEmployee}"
+                DisplayMemberPath="Name" />
+            <Label FontSize="Small"
+                   Text="{ext:Translate SummaryTypeLabel}"
+                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+            <ext:BindablePicker
+               Title="{ext:Translate SummaryTypeTitle}"
+               VerticalOptions="Center"
+               SelectedItem="{Binding SelectedSummaryType}"
+               ItemsSource="{Binding SummaryTypes}">
+            </ext:BindablePicker>
+            <Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+              </Grid.ColumnDefinitions>
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+              </Grid.RowDefinitions>
+              <Label FontSize="Small"
+                     IsVisible="{Binding IsDayVisible}"
+                     Grid.Row="0" Grid.Column="2"
+                     Text="{ext:Translate DayText}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <Label FontSize="Small"
+                     Grid.Row="0" Grid.Column="1"
+                     Text="{ext:Translate MonthText}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <Label FontSize="Small"
+                     Grid.Row="0" Grid.Column="0"
+                     Text="{ext:Translate YearText}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <ext:BindablePicker
+                  IsVisible="{Binding IsDayVisible}"
+                  Grid.Row="1" Grid.Column="2"
+                  Title="{ext:Translate DayTitle}"
+                  SelectedItem="{Binding SelectedDay}"
+                  ItemsSource="{Binding Days}"/>
+              <ext:BindablePicker
+                  Grid.Row="1" Grid.Column="1"
+                  Title="{ext:Translate MonthTitle}"
+                  DisplayMemberPath="Value"
+                  SelectedItem="{Binding SelectedMonth}"
+                  ItemsSource="{Binding Months}"/>
+              <ext:BindablePicker
+                  Grid.Row="1" Grid.Column="0"
+                  Title="{ext:Translate YearTitle}"
+                  SelectedItem="{Binding SelectedYear}"
+                  ItemsSource="{Binding Years}"/>
+            </Grid>
+
+            <Grid HeightRequest="50" HorizontalOptions="Center">
+              <Button
+                  Text="{ext:Translate ShowButton}"
+                  HorizontalOptions="Center"
+                  HeightRequest="50"
+                  Command="{Binding ShowCommand}" IsVisible="{Binding IsButtonVisible}"/>
+              <ActivityIndicator
+                IsRunning="True"
+                IsVisible="{Binding IsIndicatorVisible}"/>
+            </Grid>
+          </StackLayout>
+        </Frame>
+        
+        <StackLayout Padding="10" IsVisible="{Binding IsChartsVisible}">
+          <Grid ColumnSpacing="10" RowSpacing="10">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"></ColumnDefinition>
+              <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid Column="0" Row="0" HeightRequest="100" WidthRequest="100">
+              <xfShapeView:ShapeView
+                  ShapeType="ProgressCircle"
+                  Color="Transparent"
+                  BorderColor="#aed2f3"
+                  ProgressBorderColor="#1780e1"
+                  BorderWidth="10"
+                  VerticalOptions="Fill"
+                  HorizontalOptions="Fill"
+                  HeightRequest="100"
+                  WidthRequest="100"
+                  ProgressBorderWidth="10"
+                  Progress="{Binding Summary.TotalWorkingHoursPercent}"/>
+              <StackLayout
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <Label Text="{Binding Summary.TotalWorkingHours}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                <Label Text="{ext:Translate HrsText}"
+                       FontSize="Small"
+                       HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+              </StackLayout>
+            </Grid>
+            <StackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
+              <Label Text="{ext:Translate TotalWorkingHours}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <Label Text="{Binding Summary.TotalWorkingHoursComment}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+            </StackLayout>
+           
+            <Grid Column="0" Row="1" HeightRequest="100" WidthRequest="100">
+              <xfShapeView:ShapeView
+                  ShapeType="ProgressCircle"
+                  Color="Transparent"
+                  BorderColor="#aed2f3"
+                  ProgressBorderColor="#1780e1"
+                  BorderWidth="10"
+                  VerticalOptions="Fill"
+                  HorizontalOptions="Fill"
+                  HeightRequest="100"
+                  WidthRequest="100"
+                  ProgressBorderWidth="10"
+                  Progress="{Binding Summary.TotalLateHoursPercent}"/>
+              <StackLayout
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <Label Text="{Binding Summary.TotalLateHours}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"/>
+                <Label Text="{ext:Translate HrsText}"
+                       FontSize="Small"
+                       HorizontalOptions="Center"/>
+              </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Column="1" Grid.Row="1" VerticalOptions="Center">
+              <Label Text="{ext:Translate TotalLateHours}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <Label Text="{Binding Summary.TotalLateHoursComment}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+            </StackLayout>
+
+            <Grid Column="0" Row="2" HeightRequest="100" WidthRequest="100">
+              <xfShapeView:ShapeView
+                  ShapeType="ProgressCircle"
+                  Color="Transparent"
+                  BorderColor="#aed2f3"
+                  ProgressBorderColor="#1780e1"
+                  BorderWidth="10"
+                  VerticalOptions="Fill"
+                  HorizontalOptions="Fill"
+                  HeightRequest="100"
+                  WidthRequest="100"
+                  ProgressBorderWidth="10"
+                  Progress="{Binding Summary.TotalAbsentDaysPercent}"/>
+              <StackLayout
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center">
+                <Label Text="{Binding Summary.DaysAbsentWithoutVac}"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       IsVisible="{Binding IsMonthVisible}"/>
+                <Label Text="{Binding Summary.Status}"
+                      FontSize="Large"
+                      FontAttributes="Bold"
+                      HorizontalOptions="Center"
+                      IsVisible="{Binding IsDayVisible}"/>
+                <Label Text="{ext:Translate DaysText}"
+                       FontSize="Small"
+                       HorizontalOptions="Center"
+                       IsVisible="{Binding IsMonthVisible}"/>
+              </StackLayout>
+            </Grid>
+
+            <StackLayout Grid.Column="1" Grid.Row="2" VerticalOptions="Center" IsVisible="{Binding IsMonthVisible}">
+              <Label Text="{ext:Translate TotalAbsentDays}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <Label Text="{Binding Summary.TotalAbsentDaysComment}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+            </StackLayout>
+
+            <StackLayout Grid.Column="1" Grid.Row="2" VerticalOptions="Center" IsVisible="{Binding IsDayVisible}">
+              <Label Text="{ext:Translate StatusDashboard}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+              <Label Text="{Binding Status}"
+                     HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"></Label>
+            </StackLayout>
+          </Grid>
+          
+          <Grid x:Name="PlotGrid" Margin="0,15,0,0" />
+          
+          <Grid Padding="10">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+              <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{Binding StartGridLength}" />
+                <ColumnDefinition Width="{Binding EndGridLength}" />
+            </Grid.ColumnDefinitions>
+            <BoxView Grid.Row="0" Grid.Column="{Binding StartSpan}"
+              Color="Red" HeightRequest="3" WidthRequest="10" VerticalOptions="Center"></BoxView>
+            <BoxView Grid.Row="1" Grid.Column="{Binding StartSpan}"
+             Color="Green" HeightRequest="3" WidthRequest="10" VerticalOptions="Center"></BoxView>
+            <BoxView Grid.Row="2" Grid.Column="{Binding StartSpan}"
+              Color="Blue" HeightRequest="3" WidthRequest="10" VerticalOptions="Center"></BoxView>
+            <Label Grid.Row="0" Grid.Column="{Binding EndSpan}"
+                   Text="{ext:Translate TotalGapDurationWithoutExcuse}"
+                   FontSize="Small"
+                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+            <Label Grid.Row="1" Grid.Column="{Binding EndSpan}"
+                  Text="{ext:Translate TotalWorkDuration}"
+                  FontSize="Small"
+                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+            <Label Grid.Row="2" Grid.Column="{Binding EndSpan}"
+                  Text="{ext:Translate TotalShiftDuration}"
+                  FontSize="Small"
+                   HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+          </Grid>
+        </StackLayout>
+        <Label Text="{ext:Translate NoDataYet}"
+               IsVisible="{Binding IsNoDataMsgVisible}"
+               FontAttributes="Bold"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"/>
+      </StackLayout>
+    </ScrollView>
+  </pullToRefresh:PullToRefreshLayout>
+</ContentPage>

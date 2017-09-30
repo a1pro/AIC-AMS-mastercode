@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             xmlns:xamEffects="clr-namespace:XamEffects;assembly=XamEffects"
+             x:Class="AicAms.Views.MenuPage">
+    <ContentPage.Resources>
+      <ResourceDictionary>
+        <Style x:Key="BoxStartStyle" TargetType="BoxView">
+          <Setter Property="HeightRequest" Value="1"></Setter>
+          <Setter Property="Color" Value="Gray"></Setter>
+          <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+          <Setter Property="VerticalOptions" Value="Start"></Setter>
+        </Style>
+        <Style x:Key="BoxStyle" TargetType="BoxView">
+          <Setter Property="HeightRequest" Value="1"></Setter>
+          <Setter Property="Color" Value="Gray"></Setter>
+          <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+          <Setter Property="VerticalOptions" Value="End"></Setter>
+        </Style>
+        <Style x:Key="ImgStyle" TargetType="Image">
+          <Setter Property="Aspect" Value="AspectFit"></Setter>
+          <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+          <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+          <Setter Property="Scale" Value="0.75"></Setter>
+          <Setter Property="WidthRequest" Value="40"></Setter>
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+          <Setter Property="FontAttributes" Value="Bold"></Setter>
+          <Setter Property="FontSize" Value="Medium"></Setter>
+          <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+          <Setter Property="VerticalOptions" Value="CenterAndExpand"></Setter>
+        </Style>
+      </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <StackLayout BackgroundColor="White">
+                <Grid>
+                    <Image Source="Logo.png" Aspect="AspectFit" Margin="0,30,0,30" HeightRequest="140"/>
+                    <Grid HorizontalOptions="Fill" VerticalOptions="End" Margin="10,0,10,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{Binding StartGridLength}" />
+                            <ColumnDefinition Width="{Binding EndGridLength}" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="User.png" HeightRequest="20" Grid.Column="{Binding StartSpan}"/>
+                        <Label Text="{Binding WelcomeText}" Grid.Column="{Binding EndSpan}" TextColor="Black" FontSize="Small" FontAttributes="Bold"
+                               HorizontalOptions="Fill"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    </Grid>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStartStyle}"/>
+            </StackLayout>
+
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="1">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Dashboard.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding DashboardColor}"
+                 Text="{extensions:Translate DashboardTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="2">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Day.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding DaySummaryColor}"
+                 Text="{extensions:Translate DaySummaryTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="3">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Month.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding MonthSummaryColor}"
+                 Text="{extensions:Translate MonthSummaryTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="4">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Excuse.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding ExcuseColor}"
+                 Text="{extensions:Translate ExcuseTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="5">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Vacation.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding VacationColor}"
+                 Text="{extensions:Translate VacationTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="6">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Request.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding RequestColor}"
+                 Text="{extensions:Translate RequestTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50" IsVisible="{Binding IsManager}"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="7">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Click.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding DecisionColor}"
+                 Text="{extensions:Translate DecisionTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50" IsVisible="{Binding IsManager}"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="8">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Surprise.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding ReqSurpriseColor}"
+                 Text="{extensions:Translate RequestSurpriseTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50" IsVisible="{Binding IsManager}"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="9">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Result.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding SurpriseResultColor}"
+                 Text="{extensions:Translate SurpriseResultTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+
+            <Grid HeightRequest="50"
+                  xamEffects:TouchEffect.Color="LightGray"
+                  xamEffects:Commands.Tap="{Binding SelectMenuItemCommand}"
+                  xamEffects:Commands.TapParameter="10">
+                <Grid ColumnSpacing="10" Padding="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding StartGridLength}" />
+                        <ColumnDefinition Width="{Binding EndGridLength}" />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="{Binding StartSpan}"
+                 Style="{StaticResource ImgStyle}"
+                 Source="Logout.png"/>
+                    <Label Grid.Column="{Binding EndSpan}"
+                 TextColor="{Binding LogoutColor}"
+                 Text="{extensions:Translate LogoutTitle}"
+                 Style="{StaticResource LabelStyle}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                </Grid>
+                <BoxView Style="{StaticResource BoxStyle}"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
