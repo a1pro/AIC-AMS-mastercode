@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extensions="clr-namespace:AicAms.Extensions;assembly=AicAms"
+             xmlns:pullToRefresh="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+             x:Class="AicAms.Views.Details.VacationPage"
+             Title="{extensions:Translate VacationTitle}">
+    <pullToRefresh:PullToRefreshLayout
+        RefreshCommand="{Binding RefreshCommand}"
+        IsRefreshing="{Binding IsRefreshBusy}">
+        <ScrollView
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Padding="10">
+            <Frame BackgroundColor="#ededed" 
+                   OutlineColor="White"
+                   Padding="10"
+                   VerticalOptions="Start">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Label FontSize="Small" 
+                               Grid.Row="0" Grid.Column="0"
+                               Text="{extensions:Translate DateFromLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <DatePicker MaximumDate="{Binding MaxDate}"
+                                    Grid.Row="1" Grid.Column="0"
+                                    MinimumDate="{Binding MinTime}"
+                                    Date="{Binding DateFrom}"/>
+                        <Label FontSize="Small" 
+                               Grid.Row="0" Grid.Column="1"
+                               Text="{extensions:Translate DateToLabel}"
+                               HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                        <DatePicker MaximumDate="{Binding MaxDate}"
+                                    Grid.Row="1" Grid.Column="1"
+                                    MinimumDate="{Binding MinTime}"
+                                    Date="{Binding DateTo}"/>
+                    </Grid>
+                    <Label FontSize="Small" 
+                           Text="{extensions:Translate VacationTypeLabel}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <extensions:BindablePicker Title="{Binding VacationTypesPikerTitle}"
+                                               ItemsSource="{Binding RequestTypes}"
+                                               SelectedItem="{Binding SelectedRequestType}"
+                                               DisplayMemberPath="Name"/>
+                    <Label FontSize="Small" 
+                           Text="{extensions:Translate ReasonLabel}"
+                           HorizontalOptions="{Binding TextAligment}"
+                               HorizontalTextAlignment="{Binding TextAligment}"/>
+                    <Editor HeightRequest="100" Text="{Binding Reason}"/>
+                    <Grid HeightRequest="50" HorizontalOptions="Center">
+                        <Button Text="{extensions:Translate SendButton}"
+                                HorizontalOptions="Center"
+                                HeightRequest="50"
+                                Command="{Binding SendCommand}" IsVisible="{Binding IsButtonVisible}"/>
+                        <ActivityIndicator IsRunning="True"
+                                           IsVisible="{Binding IsIndicatorVisible}"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </ScrollView>
+    </pullToRefresh:PullToRefreshLayout>
+</ContentPage>
