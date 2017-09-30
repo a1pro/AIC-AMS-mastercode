@@ -1,0 +1,565 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AuthFailMsg" xml:space="preserve">
+    <value>Login or password is incorrect</value>
+    <comment>Failure connection message</comment>
+  </data>
+  <data name="CharH" xml:space="preserve">
+    <value>h</value>
+  </data>
+  <data name="CharM" xml:space="preserve">
+    <value>m</value>
+  </data>
+  <data name="CheckInternetMsg" xml:space="preserve">
+    <value>Check your Internet connection</value>
+    <comment>Failure connection message</comment>
+  </data>
+  <data name="DaysText" xml:space="preserve">
+    <value>days</value>
+  </data>
+  <data name="DaySummaryText" xml:space="preserve">
+    <value>Daily</value>
+    <comment>Day summary</comment>
+  </data>
+  <data name="DayText" xml:space="preserve">
+    <value>Day:</value>
+  </data>
+  <data name="DepartmentLabel" xml:space="preserve">
+    <value>Department:</value>
+  </data>
+  <data name="DepartmentTitle" xml:space="preserve">
+    <value>Choose department</value>
+    <comment>Title for department picker</comment>
+  </data>
+  <data name="DownloadingText" xml:space="preserve">
+    <value>Downloading...</value>
+    <comment>Downloading text</comment>
+  </data>
+  <data name="EmployeeLabel" xml:space="preserve">
+    <value>Employee:</value>
+  </data>
+  <data name="EmployeeTitle" xml:space="preserve">
+    <value>Choose employee</value>
+    <comment>Title for employee picker</comment>
+  </data>
+  <data name="ErrorText" xml:space="preserve">
+    <value>Error</value>
+    <comment>Error text</comment>
+  </data>
+  <data name="FingerprintComponentMsg" xml:space="preserve">
+    <value>Prove you have fingers!</value>
+    <comment>Message in fingerprint component</comment>
+  </data>
+  <data name="HoursText" xml:space="preserve">
+    <value>Hours</value>
+  </data>
+  <data name="HrsText" xml:space="preserve">
+    <value>hrs</value>
+  </data>
+  <data name="LoginButtonTitle" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login button title</comment>
+  </data>
+  <data name="LoginPlaceholder" xml:space="preserve">
+    <value>User ID</value>
+    <comment>Login entry placeholder</comment>
+  </data>
+  <data name="LogoutButtonTitle" xml:space="preserve">
+    <value>Logout</value>
+    <comment>Logout button title</comment>
+  </data>
+  <data name="MonthSummaryText" xml:space="preserve">
+    <value>Monthly</value>
+    <comment>Month summary</comment>
+  </data>
+  <data name="MonthText" xml:space="preserve">
+    <value>Month:</value>
+  </data>
+  <data name="MonthTitle" xml:space="preserve">
+    <value>Choose month</value>
+  </data>
+  <data name="NoAccessMsg" xml:space="preserve">
+    <value>Insufficient rights to perform this action</value>
+    <comment>Failure action message</comment>
+  </data>
+  <data name="NoDataYet" xml:space="preserve">
+    <value>No data yet</value>
+  </data>
+  <data name="OkText" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK text</comment>
+  </data>
+  <data name="PasswordPlaceholder" xml:space="preserve">
+    <value>Password</value>
+    <comment>Password entry placeholder</comment>
+  </data>
+  <data name="ShowButton" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="StatusA" xml:space="preserve">
+    <value>Absent</value>
+  </data>
+  <data name="StatusCM" xml:space="preserve">
+    <value>Mandate</value>
+  </data>
+  <data name="StatusDashboard" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="StatusH" xml:space="preserve">
+    <value>Holday</value>
+  </data>
+  <data name="StatusJB" xml:space="preserve">
+    <value>Joborder</value>
+  </data>
+  <data name="StatusP" xml:space="preserve">
+    <value>Onwork</value>
+  </data>
+  <data name="StatusPE" xml:space="preserve">
+    <value>Payed vacation</value>
+  </data>
+  <data name="StatusUE" xml:space="preserve">
+    <value>Unpaid vacation</value>
+  </data>
+  <data name="StatusUnknown" xml:space="preserve">
+    <value>Unknown</value>
+  </data>
+  <data name="StatusWE" xml:space="preserve">
+    <value>Weekend</value>
+  </data>
+  <data name="SummaryTypeLabel" xml:space="preserve">
+    <value>Summary:</value>
+  </data>
+  <data name="SummaryTypeTitle" xml:space="preserve">
+    <value>Choose summary type</value>
+    <comment>Title for summary timepicker</comment>
+  </data>
+  <data name="TotalAbsentDays" xml:space="preserve">
+    <value>Total absent days:</value>
+  </data>
+  <data name="TotalGapDurationWithoutExcuse" xml:space="preserve">
+    <value>Total gap duration without excuse</value>
+  </data>
+  <data name="TotalLateHours" xml:space="preserve">
+    <value>Total late hours:</value>
+  </data>
+  <data name="TotalShiftDuration" xml:space="preserve">
+    <value>Total shift duration</value>
+  </data>
+  <data name="TotalWorkDuration" xml:space="preserve">
+    <value>Total work duration</value>
+  </data>
+  <data name="TotalWorkingHours" xml:space="preserve">
+    <value>Total working hours:</value>
+  </data>
+  <data name="YearText" xml:space="preserve">
+    <value>Year:</value>
+  </data>
+  <data name="DashboardTitle" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="LogoutTitle" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="DaySummaryTitle" xml:space="preserve">
+    <value>Day summary</value>
+  </data>
+  <data name="BeginEarlyText" xml:space="preserve">
+    <value>Begin Early:</value>
+  </data>
+  <data name="BeginLateText" xml:space="preserve">
+    <value>Begin Late:</value>
+  </data>
+  <data name="OutEarlyText" xml:space="preserve">
+    <value>Out Early:</value>
+  </data>
+  <data name="OutLateText" xml:space="preserve">
+    <value>Out Late:</value>
+  </data>
+  <data name="PunchInText" xml:space="preserve">
+    <value>Punch In:</value>
+  </data>
+  <data name="PunchOutText" xml:space="preserve">
+    <value>Punch Out:</value>
+  </data>
+  <data name="ShiftDurationText" xml:space="preserve">
+    <value>Shift Duration:</value>
+  </data>
+  <data name="ShiftText" xml:space="preserve">
+    <value>Shift:</value>
+  </data>
+  <data name="StatusIN" xml:space="preserve">
+    <value>IN Only</value>
+  </data>
+  <data name="StatusOI" xml:space="preserve">
+    <value>OUT-IN</value>
+  </data>
+  <data name="StatusOU" xml:space="preserve">
+    <value>OUT Only</value>
+  </data>
+  <data name="StatusText" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="WorkDurationText" xml:space="preserve">
+    <value>Work Duration:</value>
+  </data>
+  <data name="MonthSummaryTitle" xml:space="preserve">
+    <value>Month summary</value>
+  </data>
+  <data name="DateGridTitle" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="DayGridTitle" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="DurGridTitle" xml:space="preserve">
+    <value>Dur.</value>
+  </data>
+  <data name="InGridTitle" xml:space="preserve">
+    <value>In</value>
+  </data>
+  <data name="OutGridTitle" xml:space="preserve">
+    <value>Out</value>
+  </data>
+  <data name="StatusGridTitle" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="DateFromLabel" xml:space="preserve">
+    <value>Date from:</value>
+  </data>
+  <data name="DateLabel" xml:space="preserve">
+    <value>Date:</value>
+  </data>
+  <data name="DateToLabel" xml:space="preserve">
+    <value>Date to:</value>
+  </data>
+  <data name="ExcuseTitle" xml:space="preserve">
+    <value>Excuse Request</value>
+  </data>
+  <data name="ExcuseTypeLabel" xml:space="preserve">
+    <value>Excuse type:</value>
+  </data>
+  <data name="ExcuseTypeTitle" xml:space="preserve">
+    <value>Choose excuse type</value>
+  </data>
+  <data name="FailureSentRequst" xml:space="preserve">
+    <value>Your request didn't success, please contact administrator</value>
+  </data>
+  <data name="ReasonLabel" xml:space="preserve">
+    <value>Reason:</value>
+  </data>
+  <data name="SendButton" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="SuccessSentRequest" xml:space="preserve">
+    <value>Your request sent successfully</value>
+  </data>
+  <data name="SuccessText" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="TimeFromLabel" xml:space="preserve">
+    <value>Time from:</value>
+  </data>
+  <data name="TimeToLabel" xml:space="preserve">
+    <value>Time to:</value>
+  </data>
+  <data name="VacationTitle" xml:space="preserve">
+    <value>Vacation Request</value>
+  </data>
+  <data name="VacationTypeLabel" xml:space="preserve">
+    <value>Vacation type:</value>
+  </data>
+  <data name="VacationTypeTitle" xml:space="preserve">
+    <value>Choose vacation type</value>
+  </data>
+  <data name="ExcuseValidationError" xml:space="preserve">
+    <value>Please set Time from &lt; Time to</value>
+  </data>
+  <data name="NotEnouthFields" xml:space="preserve">
+    <value>Please fill all fields</value>
+  </data>
+  <data name="VacationValidationError" xml:space="preserve">
+    <value>Please set Date from &lt; Date to</value>
+  </data>
+  <data name="AcceptedDdl" xml:space="preserve">
+    <value>Accepted</value>
+  </data>
+  <data name="AllDdl" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="DayTitle" xml:space="preserve">
+    <value>Choose day</value>
+  </data>
+  <data name="ExcuseDdl" xml:space="preserve">
+    <value>Excuses</value>
+  </data>
+  <data name="RejectedDdl" xml:space="preserve">
+    <value>Rejected</value>
+  </data>
+  <data name="RequestTitle" xml:space="preserve">
+    <value>My requests</value>
+  </data>
+  <data name="RequestTypeLable" xml:space="preserve">
+    <value>Request type:</value>
+  </data>
+  <data name="RequestTypeTitle" xml:space="preserve">
+    <value>Choose request type</value>
+  </data>
+  <data name="RetGridTitle" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="ShiftTitle" xml:space="preserve">
+    <value>Choose shift</value>
+  </data>
+  <data name="StatusLabel" xml:space="preserve">
+    <value>Status:</value>
+  </data>
+  <data name="StatusTitle" xml:space="preserve">
+    <value>Choose status</value>
+  </data>
+  <data name="TypeGridTitle" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="VacDdl" xml:space="preserve">
+    <value>Vacations</value>
+  </data>
+  <data name="YearTitle" xml:space="preserve">
+    <value>Choose year</value>
+  </data>
+  <data name="UnderProcessDdl" xml:space="preserve">
+    <value>Under process</value>
+  </data>
+  <data name="MyRequestsValidationError" xml:space="preserve">
+    <value>Please set Date from &lt;= Date to</value>
+  </data>
+  <data name="DecisionTitle" xml:space="preserve">
+    <value>Request Approval</value>
+  </data>
+  <data name="ApproveButton" xml:space="preserve">
+    <value>Approve</value>
+  </data>
+  <data name="InfoGridTitle" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="RejectButton" xml:space="preserve">
+    <value>Reject</value>
+  </data>
+  <data name="NotSelectedError" xml:space="preserve">
+    <value>Please select something</value>
+  </data>
+  <data name="AllEmpVar" xml:space="preserve">
+    <value>All employees</value>
+  </data>
+  <data name="BackButton" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="EmpIdText" xml:space="preserve">
+    <value>Employee ID:</value>
+  </data>
+  <data name="ReqIdText" xml:space="preserve">
+    <value>ID:</value>
+  </data>
+  <data name="RequestDecisionValidationError" xml:space="preserve">
+    <value>Please set Date from &lt;= Date to</value>
+  </data>
+  <data name="RetIdText" xml:space="preserve">
+    <value>Request type:</value>
+  </data>
+  <data name="TypeText" xml:space="preserve">
+    <value>Type:</value>
+  </data>
+  <data name="UserGridTitle" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="UserText" xml:space="preserve">
+    <value>User login:</value>
+  </data>
+  <data name="ExcuseStr" xml:space="preserve">
+    <value>Excuse</value>
+  </data>
+  <data name="VacationStr" xml:space="preserve">
+    <value>Vacation</value>
+  </data>
+  <data name="WelcomeText" xml:space="preserve">
+    <value>Welcome, </value>
+  </data>
+  <data name="IdGridTitle" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="NameGridTitle" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="RequestSurpriseTitle" xml:space="preserve">
+    <value>Request Surprise</value>
+  </data>
+  <data name="SendSurpriseButton" xml:space="preserve">
+    <value>Send surprise</value>
+  </data>
+  <data name="SurpriseResultTitle" xml:space="preserve">
+    <value>Surprise Results</value>
+  </data>
+  <data name="CheckedGridTitle" xml:space="preserve">
+    <value>Checked</value>
+  </data>
+  <data name="EmpIdGridTitle" xml:space="preserve">
+    <value>Emp ID</value>
+  </data>
+  <data name="InLocationGridTitle" xml:space="preserve">
+    <value>In Location</value>
+  </data>
+  <data name="MasterSurpriseLabel" xml:space="preserve">
+    <value>Search by time of request:</value>
+  </data>
+  <data name="MasterSurpriseTitle" xml:space="preserve">
+    <value>Choose master surprise</value>
+  </data>
+  <data name="SurpriseAccomplishTitle" xml:space="preserve">
+    <value>Surprise Attendance</value>
+  </data>
+  <data name="AttendanceLocationLabel" xml:space="preserve">
+    <value>Will be verified by your current location</value>
+  </data>
+  <data name="CancelToolbar" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="CheckingLocationLabel" xml:space="preserve">
+    <value>Checking location</value>
+  </data>
+  <data name="SendingRequestLabel" xml:space="preserve">
+    <value>Sending request</value>
+  </data>
+  <data name="UnableLocationMessage" xml:space="preserve">
+    <value>Unable to get location</value>
+  </data>
+  <data name="ResendPushButton" xml:space="preserve">
+    <value>Send again</value>
+  </data>
+  <data name="AlertActionTitle" xml:space="preserve">
+    <value>Attention</value>
+  </data>
+  <data name="ChangeLang" xml:space="preserve">
+    <value>Change language</value>
+  </data>
+  <data name="ChangeLangMsg" xml:space="preserve">
+    <value>The language will be changed after the application is restarted. Continue?</value>
+  </data>
+  <data name="RestartApp" xml:space="preserve">
+    <value>Please restart app</value>
+  </data>
+</root>
